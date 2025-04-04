@@ -5,8 +5,14 @@ from mpi4py import MPI
 from collections import defaultdict
 from datetime import datetime
 
-def read_ndjson_in_chunks(file_path, chunk_size=1000):
-    """Generator function to read ndjson file in chunks"""
+def read_ndjson_in_chunks(file_path, chunk_size=7000):
+    """
+    Generator function to read ndjson file in chunks
+    :param file_path: Path to the ndjson file
+    :param chunk_size: Number of records to read in each chunk
+    :return: Yields chunks of records
+    """
+
     try:
         # Open the file in read mode
         with open(file_path, 'r') as f:
@@ -31,7 +37,12 @@ def read_ndjson_in_chunks(file_path, chunk_size=1000):
         sys.exit(1)
 
 def parse_date(timestamp):
-    """Function to parse the date string and return a formatted date string"""
+    """
+    Function to parse the date string and return a formatted date string
+    :param timestamp: Timestamp string in ISO format
+    :return: Formatted date string in 'YYYY-MM-DD HH:MM-HH:MM' format
+    """
+
     try:
         # Parse the timestamp and convert to date string
         dt = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
@@ -44,7 +55,12 @@ def parse_date(timestamp):
         return None
 
 def process_chunk(chunk):
-    """Process a chunk of records and return sentiment aggregations"""
+    """
+    Process a chunk of records and return sentiment aggregations
+    :param chunk: List of records
+    :return: Tuple of dictionaries containing hour and user sentiment scores
+    """
+
     hour_sentiments = defaultdict(float)
     user_sentiments = defaultdict(float)
 
@@ -89,7 +105,10 @@ def process_chunk(chunk):
 
 
 def main(file_path):
-    """Main function to initialize MPI and process the file"""
+    """
+    Main function to initialize MPI and process the file
+    :param file_path: Path to the ndjson file
+    """
 
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()
@@ -104,7 +123,6 @@ def main(file_path):
     time_score_list = []  # to store worker time score results
     user_score_list = []  # to store worker user score results
 
-
     # Master process reads the data and distributes chunks
     if rank == 0:
         # Read data chunks from file
@@ -112,8 +130,7 @@ def main(file_path):
         for chunk in read_ndjson_in_chunks(file_path):
             chunk_index += 1
             chunk_size = len(chunk)
-        
-            
+                    
             # Create equal sized sub-chunks for each process
             sub_chunk_size = max(1, chunk_size // size)
             chunks = [chunk[i:i+sub_chunk_size] for i in range(0, chunk_size, sub_chunk_size)]
