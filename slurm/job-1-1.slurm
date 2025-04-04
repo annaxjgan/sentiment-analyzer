@@ -13,7 +13,7 @@ module load Python/3.10.4
 echo "Starting job for 1 node and 1 core"
 
 # Run the script
-srun -n 1 python3 scatter-gather.py $1
+srun -n 1 python3 ../app/scatter-gather.py $1
 
 # Collect job stats
 my-job-stats -a -n -s

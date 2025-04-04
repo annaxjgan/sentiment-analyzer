@@ -1,30 +1,16 @@
 #!/bin/bash
 
-# Check if the input file is passed as an argument
-if [ -z "$1" ]; then
-    echo "Error: No input file provided."
-    echo "Usage: $0 <input_file>"
-    exit 1
-fi
+# Get the input file name as argument
+input_file=$1
 
-# The input file argument passed to the script
-input_file="$1"
+# Folder where your .slurm files are stored
+slurm_folder="slurm_scripts"
 
-# List of SLURM files to submit
-slurm_files=(
-    "scatter-gather-1-1.slurm"
-    "scatter-gather-1-8.slurm"
-    "scatter-gather-2-8.slurm"
-)
+# Loop through each .slurm file and submit it with the input file as argument
+for script in "$slurm_folder"/*.slurm; do
+    echo "Submitting $script with input file: $input_file"
+    sbatch "$script" "$input_file"
 
-# Loop over each SLURM file and submit it with sbatch
-for slurm_file in "${slurm_files[@]}"; do
-    echo "Submitting job: $slurm_file with input file: $input_file"
-    
-    # Submit the SLURM job with the necessary arguments (e.g., input_file)
-    sbatch "$slurm_file" "$input_file"
-    
-    echo "Job submitted: $slurm_file with input file: $input_file"
+echo "All SLURM jobs submitted"
+
 done
-
-echo "All SLURM jobs have been submitted."
