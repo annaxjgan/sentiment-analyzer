@@ -4,7 +4,7 @@
 input_file=$1
 
 # Folder where your .slurm files are stored
-slurm_folder="slurm_scripts"
+slurm_folder="slurm"
 
 # Loop through each .slurm file and submit it with the input file as argument
 for script in "$slurm_folder"/*.slurm; do
