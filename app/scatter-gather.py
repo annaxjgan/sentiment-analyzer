@@ -113,7 +113,6 @@ def main(file_path):
             chunk_index += 1
             chunk_size = len(chunk)
         
-            print(f"Processing chunk {chunk_index} of size: {chunk_size}")
             
             # Create equal sized sub-chunks for each process
             sub_chunk_size = max(1, chunk_size // size)
