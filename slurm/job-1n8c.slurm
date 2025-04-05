@@ -5,7 +5,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=1-00:00:00    # 1 day
 #SBATCH --output=job_1n8c_%j.out
-#SBATCH --error=job_1n8c_%j.out
+#SBATCH --error=job_1n8c_%j.err 
 
 # Load modules
 module load mpi4py/3.1.4
