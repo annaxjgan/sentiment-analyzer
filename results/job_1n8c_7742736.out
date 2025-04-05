@@ -1,0 +1,65 @@
+Starting job for 1 node and 8 cores
+
+=======Top 5 happiest hours=========
+Created time: 2025-01-01 0:00-1:00, Total sentiment score: 206.1520997230449
+Created time: 2024-12-31 23:00-24:00, Total sentiment score: 187.465476632202
+Created time: 2025-01-01 5:00-6:00, Total sentiment score: 135.92521743446838
+Created time: 2024-12-24 22:00-23:00, Total sentiment score: 117.28631361201224
+Created time: 2024-12-25 15:00-16:00, Total sentiment score: 114.6019545322517
+
+=======Top 5 saddest hours=========
+Created time: 2024-11-06 7:00-8:00, Total sentiment score: -373.76724797383446
+Created time: 2024-09-11 1:00-2:00, Total sentiment score: -305.5760669374093
+Created time: 2025-01-30 17:00-18:00, Total sentiment score: -256.568425041982
+Created time: 2025-01-30 18:00-19:00, Total sentiment score: -226.90971970072766
+Created time: 2025-02-03 16:00-17:00, Total sentiment score: -223.83348768435093
+
+=======Top 5 happiest people=========
+Account id: gameoflife, Username: 110237351908820391, Total sentiment score: 9105.7419422044
+Account id: TheFigen_, Username: 112728392129924952, Total sentiment score: 2541.4742243891906
+Account id: EmojiAquarium, Username: 113441357479871732, Total sentiment score: 2086.4567379515825
+Account id: choochoo, Username: 113541715572887376, Total sentiment score: 1978.7431011025424
+Account id: hnbot, Username: 110006430181118061, Total sentiment score: 1917.793587805296
+
+=======Top 5 saddest people=========
+Account id: realTuckFrumper, Username: 109521050152429017, Total sentiment score: -9094.081275454184
+Account id: uavideos, Username: 109471254002284799, Total sentiment score: -5901.960347560107
+Account id: TheHindu, Username: 113443732887173058, Total sentiment score: -5710.722600656024
+Account id: uutisbot, Username: 111873606251312850, Total sentiment score: -4066.1381701383348
+Account id: MissingYou, Username: 112071598249945636, Total sentiment score: -3341.6033381195853
+
+Total Execution Time: 3123.901 seconds
+
+IMP: my-job-stats backend services are currently experiencing network related issues.
+While we are investigating the rootcause, the job resource usage metrics may not be uptodate or show negative values 
+
+Job ID           : 7742736
+Cluster          : spartan
+User/Project     : xinjieg1/comp90024
+Nodes            : 1
+Wall-clock time  : 00:52:07 / 1-00:00:00
+
+Displaying overall resources usage from 2025-04-05 02:07:23 to 2025-04-05 02:59:30:
+
+NODE            CPU#        TOT%   ( USR   / SYS   / WIO   / IDLE  ) 
+
+spartan-bm176 : 
+                CPU# 1    : 99.9   (  96.5 /   3.5 /   0.0 /   0.1 ) 
+                CPU# 2    : 100.0  (  99.4 /   0.6 /   0.0 /   0.0 ) 
+                CPU# 3    : 100.0  (  99.4 /   0.6 /   0.0 /   0.0 ) 
+                CPU# 4    : 100.0  (  99.3 /   0.7 /   0.0 /   0.0 ) 
+                CPU# 5    : 100.0  (  99.2 /   0.8 /   0.0 /   0.0 ) 
+                CPU# 6    : 100.0  (  99.4 /   0.6 /   0.0 /   0.0 ) 
+                CPU# 7    : 100.0  (  99.4 /   0.6 /   0.0 /   0.0 ) 
+                CPU# 8    : 100.0  (  99.4 /   0.6 /   0.0 /   0.0 ) 
+
+
+Allocated CPUs            : 8    
+  CPUs with usage <25%    : 0    
+  CPUs with usage <50%    : 0    
+  CPUs with usage >50%    : 8    
+
+Memory used (RAM)         : 0.0%  [5MB of 33555MB]
+
+--------------------------------------------
+
